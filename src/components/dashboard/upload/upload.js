@@ -1,10 +1,12 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
+import GetImages from "../get-images/get-images";
 
-export default function Upload() {
+export default function Upload({type}) {
   const [file, setFile] = useState();
   const [comment, setComment] = useState();
+  const title= type.toUpperCase();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +15,8 @@ export default function Upload() {
     try {
       const data = new FormData();
       data.set("file", file);
-      data.set("comment", comment); // Agrega el comentario al FormData
+      data.set("comment", comment);
+      data.set("folder", type);
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -22,6 +25,7 @@ export default function Upload() {
       console.log(res);
 
       if (res.ok) {
+        window.location.reload()
         console.log("File uploaded successfully");
       }
     } catch (error) {
@@ -40,8 +44,8 @@ export default function Upload() {
 
   return (
 <div className="flex m-5 ">
-      <div className="bg-zinc-950 p-5 rounded-lg border border-white">
-        <h1 className="text-4xl text-center my-4">Upload a file</h1>
+      <div className="bg-zinc-950 p-5 rounded-lg border border-blue">
+        <h1 className="text-4xl text-center my-4">{title}</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="file"
@@ -50,12 +54,12 @@ export default function Upload() {
           />
           <input
             type="text"
-            className="bg-zinc-900 text-zinc-100 p-2 rounded block mb-2"
+            className="bg-zinc-500 text-zinc-100 p-2 rounded block mb-2"
             placeholder="Add a comment"
             onChange={handleCommentChange}
           />
           <button
-            className="bg-green-900 text-zinc-100 p-2 rounded block w-full disabled:opacity-50"
+            className="bg-blue-900 text-zinc-100 p-2 rounded block w-full disabled:opacity-50"
             disabled={!file}
           >
             Upload
@@ -70,7 +74,9 @@ export default function Upload() {
             height={256}
           />
         )}
+        <GetImages type={type}/>
       </div>
+      
     </div>
   );
 }

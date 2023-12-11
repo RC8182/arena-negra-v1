@@ -7,6 +7,7 @@ export async function POST(request) {
   const data = await request.formData();
   const file = data.get("file");
   const comment= data.get("comment")
+  const folder=data.get("folder")
 
   if (!file) {
     return NextResponse.json({ success: false });
@@ -18,18 +19,17 @@ export async function POST(request) {
   // With the file data in the buffer, you can do whatever you want with it.
   // For this, we'll just write it to the filesystem in a new location
   //   const filePath = `/tmp/${file.name}`
-  const filePath = path.join(process.cwd(), "public/uploads", file.name);
+  const filePath = path.join(process.cwd(), `public/uploads/${folder}/`, file.name);
   await writeFile(filePath, buffer);
   // Connect to db
   await testConnection();
 
   // Insert into database
-  const url_image = `/uploads/${file.name}`;
+  const url_image = `/uploads/${folder}/${file.name}`;
   const description = comment;
   const sql = `INSERT INTO photos (description, url_image) VALUES (?, ?)`;
   await connection.query(sql, [description, url_image]);
 
-  console.log(`open ${filePath} to see the uploaded file and the comment: ${comment}`);
 
   return NextResponse.json({ success: true });
 }
