@@ -1,8 +1,11 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ChakraProvider } from "@chakra-ui/react"
+import { Box, ChakraProvider } from "@chakra-ui/react"
 import Footer from '@/components/footer/footer'
 import { ArenaProvider } from '@/context/arenaProvider'
+import NavBar from '@/components/navbar/navbar'
+import { Body } from '@/components/body/body'
+import Content from '@/components/content'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,8 +19,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ChakraProvider>
         <ArenaProvider>
+        <Box >
+          <NavBar/>
+        </Box>
+        <Box>
+          <Content content={<Body/>} />
+        </Box>
+
+          <Box>
+            <Footer />
+          </Box>
           <body className={inter.className}>{children}</body>
-          <Footer />
         </ArenaProvider>
       </ChakraProvider>
 </html>
