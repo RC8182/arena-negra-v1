@@ -45,7 +45,7 @@ export default function Upload({type}) {
   return (
 <div className="flex m-5 ">
       <div className="bg-zinc-950 p-5 rounded-lg border border-blue">
-        <h1 className="text-4xl text-center my-4">{title}</h1>
+        <h1 className="text-4xl text-center my-4 text-white">{title}</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="file"

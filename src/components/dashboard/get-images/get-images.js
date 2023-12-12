@@ -51,7 +51,7 @@ export default function GetImages({type}) {
 const filteredImages = images.filter(image => image.url.includes(`/uploads/${folder}/`));
 
 return (
-  <div className="flex m-5 ">
+  <div className="flex m-5 text-white ">
     <div className="bg-zinc-950 p-5 rounded-lg border border-white">
       
       {filteredImages.map((image, index) => (
