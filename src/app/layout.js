@@ -1,9 +1,8 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
-import { Box, ChakraProvider, Flex } from "@chakra-ui/react"
 import Footer from '@/components/footer/footer'
 import { ArenaProvider } from '@/context/arenaProvider'
 import NavBar from '@/components/navbar/navbar'
+import { Providers } from './providers'
 
 
 
@@ -14,16 +13,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ChakraProvider>
-      <ArenaProvider>
-        <Flex direction="column" minH="100vh">
-          <NavBar/>
-          <Box flex="1">
-            {children}
-          </Box>
-          <Footer />
-        </Flex>
-      </ArenaProvider>
-    </ChakraProvider>
+    <html lang='en'>
+      <body>
+        <Providers>
+          <ArenaProvider>
+            <NavBar/>
+          {children}
+          <Footer/>
+          </ArenaProvider>
+        </Providers>
+      </body>
+    </html>
   )
 }
