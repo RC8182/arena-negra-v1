@@ -20,8 +20,12 @@ export default function Galeria() {
   const titulo= idioma.galeria.titulo;
 
   return (
-    <Box backgroundColor={'black'} color={'white'} w={'100%'}>
-    <Box margin={'5px'} >
+    <Box backgroundColor={'black'} 
+    color={'white'} 
+    w={'100%'}
+    minW={{base:'400px', lg:'100vw'}}
+    minH={{base:'600px', lg:'600px'}}>
+    <Box >
       <Flex flexDir={'column'} 
         align={'center'}
         flexWrap={'wrap'}>

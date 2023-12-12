@@ -38,6 +38,8 @@ export default function Footer() {
       backgroundColor={'black'}
       color={'white'}
       w={'100%'}
+      minW={{base:'400px', lg:'100vw'}}
+      minH={{base:'600px', lg:'600px'}}
       >
       <Container as={Stack} maxW={{base:'380px',lg:'7xl'}} py={10} justifyContent={'center'}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}  margin={'5%'}>

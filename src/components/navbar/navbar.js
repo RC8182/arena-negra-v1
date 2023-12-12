@@ -20,7 +20,9 @@ export default function NavBar() {
   return (
       <Box backgroundColor={'black'} 
             px={4}
-            w={'100%'} >
+            w={'100%'}
+            minW={{base:'400px', lg:'100vw'}}
+            >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}  textColor={'white'} >
           <IconButton
             size={'md'}
