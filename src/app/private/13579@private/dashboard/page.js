@@ -1,12 +1,12 @@
-import Upload from "@/components/dashboard/upload/upload";
+import Upload from "@/components/dashboard/upload-images/upload";
 
 export default function Dashboard() {
 
-
   return (
     <div className="flex m-5">
-      <Upload type={'gallery'}/>
-      <Upload type={'front-page'}/>
+      <Upload type={'galeria'}/>
+      <Upload type={'portada'}/>
+      
     </div>
   );
 }

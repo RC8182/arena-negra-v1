@@ -9,7 +9,7 @@ import { ArenaContex } from '@/context/arenaProvider'
 
 
 export const Portada = () => {
-    const  {idioma}= useContext(ArenaContex)
+    const  {idioma, imgFrontPage}= useContext(ArenaContex)
     const h1= idioma.portada.h1
     const h2= idioma.portada.h2
   return (
@@ -19,7 +19,8 @@ export const Portada = () => {
         minW={{base:'400px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        backgroundImage={{base:`url(${v.src})`,lg:`url(${h.src})`}}
+        backgroundImage={`url(${imgFrontPage[0]?.url})`}
+        backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
         backgroundRepeat={'no-repeat'}
