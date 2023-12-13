@@ -5,11 +5,12 @@ export async function GET() {
 
   try {
     // Hacer la consulta SQL
-    const [rows] = await connection.query("SELECT id, url_image, description FROM photos");
+    const [rows] = await connection.query("SELECT id, title_file, url_image, description FROM photos");
 
     // Formatear los resultados en un objeto JSON
     const photos = rows.map(row => ({
-      id: row.id,  
+      id: row.id,
+      title_file: row.title_file,  
       url: row.url_image,
       comment: row.description
     }));

@@ -7,7 +7,7 @@ import { Parallax } from "@/components/parallax/parallax";
 
 export default function Galeria() {
 
-  const {idioma, imgGallery}= useContext(ArenaContex);
+  const {idioma, imgGaleria}= useContext(ArenaContex);
   const titulo= idioma.galeria.titulo;
 
   return (
@@ -21,7 +21,7 @@ export default function Galeria() {
         align={'center'}
         flexWrap={'wrap'}>
         <Heading id="galeria">{titulo}</Heading>        
-         {imgGallery?.map((e,i)=>{
+         {imgGaleria?.map((e,i)=>{
           return <Parallax img={e.url} key={i} />
          })}
 

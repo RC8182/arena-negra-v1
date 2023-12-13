@@ -6,23 +6,26 @@ export const ArenaContex = createContext();
 
 export const ArenaProvider = ({children}) => {
     const [idioma, setIdioma] = useState(datos.esp);
-    const [imgGallery, setImgGallery] = useState([]);
-    const [imgFrontPage, setImgFrontPage] = useState([]);
+    const [imgGaleria, setImgGaleria] = useState([]);
+    const [imgPortada, setImgPortada] = useState([]);
+    const [imgEspecialidades, setImgEspecialidades] = useState([]);
 
     useEffect(() => {
-        fetch('api/get')
+        fetch('/api/get')
             .then(response => response.json())
             .then(data => {
                 const img = data.map(item => item);
-                const galleryImages = img.filter(image => image.url.includes('/uploads/galeria/'));
-                setImgGallery(galleryImages);
-                const frontPageImages = img.filter(image => image.url.includes('/uploads/portada/'));
-                setImgFrontPage(frontPageImages);
+                const galeriaImages = img.filter(image => image.url.includes('/uploads/galeria/'));
+                setImgGaleria(galeriaImages);
+                const portadaImages = img.filter(image => image.url.includes('/uploads/portada/'));
+                setImgPortada(portadaImages);
+                const especialidadesImages = img.filter(image => image.url.includes('/uploads/especialidades/'));
+                setImgEspecialidades(especialidadesImages);
             })
             .catch(error => console.error('Error:', error));
-    }, []);
+    }, [imgGaleria, imgPortada, imgEspecialidades]);
 
-    const data = {idioma, setIdioma, imgGallery, imgFrontPage }
+    const data = {idioma, setIdioma, imgGaleria, imgPortada, imgEspecialidades }
 
     return (
         <ArenaContex.Provider value={data}>

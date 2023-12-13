@@ -6,8 +6,10 @@ import { connection, testConnection } from "../../../../db/connection/connection
 export async function POST(request) {
   const data = await request.formData();
   const file = data.get("file");
-  const comment= data.get("comment")
+  const titleFile=data.get("title_file")
+  const comment= data.get("especialidades")
   const folder=data.get("folder")
+
 
   if (!file) {
     return NextResponse.json({ success: false });
@@ -26,9 +28,10 @@ export async function POST(request) {
 
   // Insert into database
   const url_image = `/uploads/${folder}/${file.name}`;
+  const title_file = titleFile;
   const description = comment;
-  const sql = `INSERT INTO photos (description, url_image) VALUES (?, ?)`;
-  await connection.query(sql, [description, url_image]);
+  const sql = `INSERT INTO photos (title_file, description, url_image) VALUES (?, ?, ?)`;
+  await connection.query(sql, [title_file, description, url_image]);
 
 
   return NextResponse.json({ success: true });

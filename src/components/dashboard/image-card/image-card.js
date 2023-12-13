@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function GetImages({type}) {
+export default function ImageCard({type}) {
   const [images, setImages] = useState([]);
   const folder=type;
 
@@ -56,15 +56,18 @@ return (
       
       {filteredImages.map((image, index) => (
         <div key={index} className="m-5 flex flex-col items-center">
-          {console.log(image.url)}
-          <h1 className="text-4xl text-center my-4">{image.comment}</h1>
+          <h1 className="text-4xl text-center my-4">{image.title_file}</h1>
           <Image
             src={image.url}
-            alt={image.comment}
+            alt={image.title_file}
             className="w-64 h-64 object-contain mx-auto"
             width={256}
             height={256}
+            priority={true}
           />
+          {(type === 'especialidades')
+          ?<div>{image.comment}</div>
+          :null}
           <p>{image.id}</p>
           <div className="flex">
             <button onClick={() => handleEdit(image)}>🖉 Editar</button>

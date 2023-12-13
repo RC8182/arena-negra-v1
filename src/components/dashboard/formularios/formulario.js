@@ -1,11 +1,14 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
-import GetImages from "../get-images/get-images";
+import GetImages from "../image-card/image-card";
 
-export default function Upload({type}) {
+export default function Formulario({type}) {
   const [file, setFile] = useState();
+  const [title_file, setTitle_file] = useState();
   const [comment, setComment] = useState();
+
+  
   const title= type.toUpperCase();
 
   const handleSubmit = async (e) => {
@@ -15,8 +18,11 @@ export default function Upload({type}) {
     try {
       const data = new FormData();
       data.set("file", file);
-      data.set("comment", comment);
+      data.set("title_file", title_file);
       data.set("folder", type);
+      (type==='especialidades')
+      ? data.set('especialidades', comment)
+      : null;
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -38,8 +44,13 @@ export default function Upload({type}) {
     setFile(e.target.files?.[0]);
   };
 
+
+  const handleTitleFileChange = (e) => {
+    setTitle_file(e.target.value); 
+  }
+
   const handleCommentChange = (e) => {
-    setComment(e.target.value); // Actualiza el estado del comentario
+    setComment(e.target.value); 
   };
 
   return (
@@ -55,9 +66,19 @@ export default function Upload({type}) {
           <input
             type="text"
             className="bg-zinc-500 text-zinc-100 p-2 rounded block mb-2"
-            placeholder="Add a comment"
-            onChange={handleCommentChange}
+            placeholder="Add Title File"
+            onChange={handleTitleFileChange}
           />
+          {
+              (type==='especialidades')
+              ?<textarea
+              type="textarea"
+              className="bg-zinc-500 text-zinc-100 p-2 rounded block mb-2"
+              placeholder="Add a comment"
+              onChange={handleCommentChange}
+            />
+              :null
+          }
           <button
             className="bg-blue-900 text-zinc-100 p-2 rounded block w-full disabled:opacity-50"
             disabled={!file}

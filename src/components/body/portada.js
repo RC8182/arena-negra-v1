@@ -1,15 +1,13 @@
 'use client'
 import React, { useContext } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
-import v from '../../../public/images/1460/tinta.jpg'
-import h from '../../../public/images/800/tinta.jpg'
 import { Reservar } from '../botones/reservas'
 import { Logo } from '../logo'
 import { ArenaContex } from '@/context/arenaProvider'
 
 
 export const Portada = () => {
-    const  {idioma, imgFrontPage}= useContext(ArenaContex)
+    const  {idioma, imgPortada}= useContext(ArenaContex)
     const h1= idioma.portada.h1
     const h2= idioma.portada.h2
   return (
@@ -19,7 +17,7 @@ export const Portada = () => {
         minW={{base:'400px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        backgroundImage={`url(${imgFrontPage[0]?.url})`}
+        backgroundImage={`url(${imgPortada[0]?.url})`}
         backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
