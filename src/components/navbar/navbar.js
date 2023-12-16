@@ -11,6 +11,7 @@ import { NavLink } from './navLink'
 import { Llamar } from '../botones/llamar'
 import { Direccion } from '../botones/direccion'
 import { Idiomas } from '../botones/idiomas'
+import Link from 'next/link'
 
 
 
@@ -21,7 +22,7 @@ export default function NavBar() {
       <Box backgroundColor={'black'} 
             px={4}
             w={'100%'}
-            minW={{base:'400px', lg:'100vw'}}
+            minW={{base:'300px', lg:'100vw'}}
             >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}  textColor={'white'} >
           <IconButton
@@ -32,7 +33,9 @@ export default function NavBar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Arena Negra</Box>
+          <Link href="/">
+              <Box>Arena Negra</Box>
+          </Link>
             <HStack display={{ base: 'none', md: 'flex' }}>
               <NavLink/>
             </HStack>
@@ -40,7 +43,7 @@ export default function NavBar() {
 
         <Flex alignItems={'center'} margin={'3%'}>
 
-          <Flex >
+          <Flex gap={'60px'}justifyContent={'space-between'}>
                 <HStack display={{ base: 'none', md: 'flex' }} margin={'1%'}>
                   <Llamar phone={+34677397592}/>
                 </HStack>
@@ -50,10 +53,6 @@ export default function NavBar() {
                 <HStack display={{ base: 'none', md: 'flex' }} margin={'1%'}>
                   <Idiomas />
                 </HStack>
-
-            {/* <Flex margin={'1%'}>
-              <ColorMode/>
-            </Flex> */}
           </Flex>
           </Flex>
         </Flex>

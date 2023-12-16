@@ -1,6 +1,7 @@
 import { ArenaContex } from '@/context/arenaProvider';
 import { datos } from '@/data/datos'
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
+import Link from 'next/link';
 import React, { useContext } from 'react'
 
 export const Idiomas = () => {
@@ -12,10 +13,10 @@ export const Idiomas = () => {
         return setIdioma(datos.esp);
     }
   return (
-    <div>
+    <Box textColor={'white'}>
         {(idioma === datos.ing)?
-        <Button border={'1px black solid'} onClick={esp}>Español?</Button>:
-        <Button border={'1px black solid'} onClick={ing}>English?</Button>}
-    </div>
+        <Link href="#" onClick={esp}>Español?</Link>:
+        <Link href="#" onClick={ing}>English?</Link>}
+    </Box>
   )
 }

@@ -11,7 +11,7 @@ export const ArenaProvider = ({children}) => {
     const [imgEspecialidades, setImgEspecialidades] = useState([]);
 
     useEffect(() => {
-        fetch('/api/get')
+        fetch('./api/get')
             .then(response => response.json())
             .then(data => {
                 const img = data.map(item => item);
@@ -23,7 +23,7 @@ export const ArenaProvider = ({children}) => {
                 setImgEspecialidades(especialidadesImages);
             })
             .catch(error => console.error('Error:', error));
-    }, [imgGaleria, imgPortada, imgEspecialidades]);
+    }, []);
 
     const data = {idioma, setIdioma, imgGaleria, imgPortada, imgEspecialidades }
 

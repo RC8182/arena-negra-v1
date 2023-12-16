@@ -16,7 +16,7 @@ export const Testimonio = () => {
         <Box backgroundColor={'black'}
          color={'white'} 
          w={'100%'}
-         minW={{base:'400px', lg:'100vw'}}
+         minW={{base:'300px', lg:'100vw'}}
          minH={{base:'600px', lg:'600px'}}>
                 <Box margin={'5%'} >
                   <Stack spacing={0} align={'center'}>

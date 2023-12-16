@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  arena-db:
+    image: arena-mysql
+    build: ./db
+    volumes:
+      - ./db/initial:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+    ports:
+      - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+
+  app:
+    image: arena-negra
+    build: .
+    depends_on:
+      - arena-db
+    links:
+      - arena-db
+    env_file: .env
+    ports:
+      - $APP_LOCAL_PORT:$APP_DOCKER_PORT
+    environment:
+      - DB_HOST=$MYSQL_HOST
+      - DB_USER=$MYSQL_USER
+      - DB_PASSWORD=$MYSQL_PASSWORD
+      - DB_NAME=$MYSQL_DATABASE
+      - DB_PORT=$MYSQL_DOCKER_PORT
+    volumes:  
+      - ./public/uploads/especialidades:/app/public/uploads/especialidades
+      - ./public/uploads/galeria:/app/public/uploads/galeria
+      - ./public/uploads/portada:/app/public/uploads/portada

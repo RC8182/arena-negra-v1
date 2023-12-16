@@ -10,11 +10,12 @@ export const Portada = () => {
     const  {idioma, imgPortada}= useContext(ArenaContex)
     const h1= idioma.portada.h1
     const h2= idioma.portada.h2
+    console.log(imgPortada[0]?.url);
   return (
     <Box w={'100%'}>
         <Box 
         className='fondo' 
-        minW={{base:'400px', lg:'100vw'}}
+        minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
         backgroundImage={`url(${imgPortada[0]?.url})`}
@@ -46,7 +47,7 @@ export const Portada = () => {
                     <h2>{h2}</h2>
                     </Flex>
 
-                    <Flex flexDir={'column'}>
+                    <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
                         <Reservar />
                     </Flex>
                     <Flex 

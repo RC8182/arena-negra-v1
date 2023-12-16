@@ -38,7 +38,7 @@ export default function Footer() {
       backgroundColor={'black'}
       color={'white'}
       w={'100%'}
-      minW={{base:'400px', lg:'100vw'}}
+      minW={{base:'300px', lg:'100vw'}}
       minH={{base:'600px', lg:'600px'}}
       >
       <Container as={Stack} maxW={{base:'380px',lg:'7xl'}} py={10} justifyContent={'center'}>

@@ -6,7 +6,7 @@ export const Parallax = ({img , titulo}) => {
     <Box w={'100%'}>
         <Box 
           className='fondo' 
-          minW={{base:'400px', lg:'100vw'}}
+          minW={{base:'300px', lg:'100vw'}}
           minH={{base:'600px', lg:'600px'}}
           position={'relative'}
           backgroundImage={`url(${img})`}

@@ -13,7 +13,8 @@ export const Especialidades = () => {
     const productos= idioma.especialidades.productos;
 
     return (
-        <Box backgroundColor={'black'} color={'white'} w={'100%'}         minW={{base:'400px', lg:'100vw'}}
+        <Box backgroundColor={'black'} color={'white'} w={'100%'}
+        minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}>
                 <Box margin={'5%'} >
                   <Stack spacing={0} align={'center'}>

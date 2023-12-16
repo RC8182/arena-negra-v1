@@ -7,15 +7,12 @@ export const Llamar = (props) => {
     const {idioma}=useContext(ArenaContex)
     const phoneNumber= props.phone;
 
-  return (
-    <Box>
-        <Button border={'1px black solid'}>
-        {(idioma === datos.ing)?
-        <a href={`tel:${phoneNumber}`} >Call Now</a>
-        : <a href={`tel:${phoneNumber}`} >Llamar</a>
+    return (
+      <Box textColor={'white'}>
+        {(idioma === datos.ing) ?
+          <a href={`tel:${phoneNumber}`} ><span style={{whiteSpace: 'nowrap'}}>Call Now</span></a>
+          : <a href={`tel:${phoneNumber}`} >Llamar</a>
         }
-        
-        </Button>
-    </Box>
-  )
-}
+      </Box>
+    )
+      }    

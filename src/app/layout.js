@@ -3,6 +3,7 @@ import Footer from '@/components/footer/footer'
 import { ArenaProvider } from '@/context/arenaProvider'
 import NavBar from '@/components/navbar/navbar'
 import { Providers } from './providers'
+import  FootBar  from '@/components/footer/footBar'
 
 
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
             <NavBar/>
           {children}
           <Footer/>
+          <FootBar/>
           </ArenaProvider>
         </Providers>
       </body>
