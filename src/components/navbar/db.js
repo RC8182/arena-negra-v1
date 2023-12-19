@@ -15,10 +15,10 @@ export const datos=
                     title: 'Contacto',
                     url: '#contacto'
                 },
-                {
-                    title: 'Menu',
-                    url: '/menu'
-                },
+                // {
+                //     title: 'Menu',
+                //     url: '/menu'
+                // },
 
             ]
         },
@@ -39,10 +39,10 @@ export const datos=
                     title: 'Contact Us',
                     url: '#contacto'
                 },
-                {
-                    title: 'Menu',
-                    url: '/menu'
-                },
+                // {
+                //     title: 'Menu',
+                //     url: '/menu'
+                // },
 
             ]
    },        

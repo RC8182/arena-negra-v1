@@ -93,7 +93,7 @@ export default function Footer() {
           </Stack>
         </SimpleGrid>
       </Container>
-      <Box py={10}>
+      <Box paddingBottom={20}>
         <Flex
           align={'center'}
           _before={{
@@ -112,7 +112,7 @@ export default function Footer() {
           }}>
           <Logo width={'50px'}/>
         </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+        <Text fontSize={'sm'} textAlign={'center'}>
           © 2023 Arena Negra Restaurante. All rights reserved
         </Text>
       </Box>
