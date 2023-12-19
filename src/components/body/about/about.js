@@ -2,11 +2,13 @@
 import { ArenaContex } from '@/context/arenaProvider'
 import { Box, Flex, Heading, Stack, Text} from '@chakra-ui/react'
 import React, { useContext } from 'react'
+import { datos } from './db'
 
 export const About = () => {
   const {idioma}=useContext(ArenaContex);
-  const titulo= idioma.about.titulo;
-  const texto= idioma.about.texto;
+  const datosAbout =( idioma==='esp') ? datos?.esp : datos?.ing;
+  const titulo= datosAbout.about.titulo;
+  const texto= datosAbout.about.texto;
   return (
     <Box backgroundColor={'black'} 
     color={'white'} 

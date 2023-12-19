@@ -1,11 +1,11 @@
 'use client'
-import { datos } from '@/data/datos';
 import React, { createContext, useState, useEffect } from 'react'
 
 export const ArenaContex = createContext();
 
 export const ArenaProvider = ({children}) => {
-    const [idioma, setIdioma] = useState(datos.esp);
+
+    const [idioma, setIdioma] = useState('esp');
     const [imgGaleria, setImgGaleria] = useState([]);
     const [imgPortada, setImgPortada] = useState([]);
     const [imgEspecialidades, setImgEspecialidades] = useState([]);

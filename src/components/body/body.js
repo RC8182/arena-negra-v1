@@ -1,8 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react'
-import { About } from './about'
+import { About } from './about/about'
 import Galeria from './galeria/galeria'
 import { Testimonio } from './testimony/testimonio'
-import { Portada } from './portada'
+import { Portada } from './portada/portada'
 import { Especialidades } from './especialidades/especialidades'
 export const Body = () => {
 

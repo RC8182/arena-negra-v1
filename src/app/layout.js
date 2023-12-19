@@ -4,6 +4,7 @@ import { ArenaProvider } from '@/context/arenaProvider'
 import NavBar from '@/components/navbar/navbar'
 import { Providers } from './providers'
 import  FootBar  from '@/components/footer/footBar'
+import { HStack } from '@chakra-ui/react'
 
 
 
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
             <NavBar/>
           {children}
           <Footer/>
+          <HStack display={{ base: 'flex', md: 'none' }}>
           <FootBar/>
+          </HStack>
           </ArenaProvider>
         </Providers>
       </body>

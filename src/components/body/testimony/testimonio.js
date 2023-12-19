@@ -1,16 +1,17 @@
 'use client'
 import { ArenaContex } from '@/context/arenaProvider'
-import { datos } from '@/data/datos'
-import { Box, Button, Container, Flex, Heading, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { Usuarios } from './usuarios'
+import { datos } from './db'
 
 
 export const Testimonio = () => {
     const  {idioma}= useContext(ArenaContex)
-    const titulo= idioma.resenias.titulo
-    const sub1= idioma.resenias.subtitulo
-    const Users= idioma.resenias.usuarios;
+    const datosTestimonio =( idioma==='esp') ? datos?.esp : datos?.ing;
+    const titulo= datosTestimonio.resenias.titulo
+    const sub1= datosTestimonio.resenias.subtitulo
+    const Users= datosTestimonio.resenias.usuarios;
 
     return (
         <Box backgroundColor={'black'}

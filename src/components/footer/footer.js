@@ -14,7 +14,7 @@ import {
 import { useContext } from 'react'
 import { Logo } from '../logo';
 import { ArenaContex } from '@/context/arenaProvider';
-
+import { datos } from './db';
 
 const ListHeader = ({ children }) => {
   return (
@@ -27,11 +27,11 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
 
   const {idioma}= useContext(ArenaContex);
-
-  const contacto= idioma.pie.contacto;
-  const direccion= idioma.pie.direccion;
-  const horario= idioma.pie.horario;
-  const siguenos= idioma.pie.siguenos;
+  const datosFooter =( idioma==='esp') ? datos?.esp : datos?.ing;
+  const contacto= datosFooter.pie.contacto;
+  const direccion= datosFooter.pie.direccion;
+  const horario= datosFooter.pie.horario;
+  const siguenos= datosFooter.pie.siguenos;
 
   return (
     <Box

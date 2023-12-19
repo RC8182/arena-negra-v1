@@ -1,15 +1,17 @@
 'use client'
 import React, { useContext } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
-import { Reservar } from '../botones/reservas'
-import { Logo } from '../logo'
+import { Reservar } from '../../botones/reservas'
+import { Logo } from '../../logo'
 import { ArenaContex } from '@/context/arenaProvider'
+import { datos } from './db'
 
 
 export const Portada = () => {
     const  {idioma, imgPortada}= useContext(ArenaContex)
-    const h1= idioma.portada.h1
-    const h2= idioma.portada.h2
+    const datosPortada =( idioma==='esp') ? datos?.esp : datos?.ing;
+    const h1= datosPortada.portada.h1
+    const h2= datosPortada.portada.h2
     console.log(imgPortada[0]?.url);
   return (
     <Box w={'100%'}>

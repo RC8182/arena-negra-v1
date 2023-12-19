@@ -13,7 +13,9 @@ export const Parallax = ({img , titulo}) => {
           backgroundAttachment={'fixed'}
           backgroundPosition={'center'}
           backgroundRepeat={'no-repeat'}
-          backgroundSize={'contain'}>
+          backgroundSize={'contain'}
+          //m={'50px'}
+          >
             <Box 
                 className='contenedor-titulo'
                 position={'absolute'}

@@ -3,14 +3,15 @@ import { ArenaContex } from '@/context/arenaProvider'
 import { Box, Heading, Stack, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { Productos } from './productos'
+import { datos } from './db'
 
 
 
 export const Especialidades = () => {
     const  {idioma}= useContext(ArenaContex)
-    const titulo= idioma.especialidades.titulo
-
-    const productos= idioma.especialidades.productos;
+    const datosEspecialidades =( idioma==='esp') ? datos?.esp : datos?.ing;
+    const titulo= datosEspecialidades.especialidades.titulo
+    const productos= datosEspecialidades.especialidades.productos;
 
     return (
         <Box backgroundColor={'black'} color={'white'} w={'100%'}
