@@ -45,7 +45,7 @@ export const Testimonio = () => {
                       <Flex className='boton-escribe'
                       justifyContent={'center'}
                      >
-                     {(idioma === datos.esp)?
+                     {(idioma === 'esp')?
                       <Button border={'1px black solid'}>
                           <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,3,,,,'} isExternal>Escribe un comentario</Link>
                       </Button> :
@@ -56,7 +56,7 @@ export const Testimonio = () => {
                       </Flex>
                       <Flex className='boton-ver-mas'
                       justifyContent={'center'}>
-                      {(idioma === datos.esp)?
+                      {(idioma === 'esp')?
                         <Button border={'1px black solid'}>
                           <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,1,,,,'} isExternal>
                               Todos los comentarios
