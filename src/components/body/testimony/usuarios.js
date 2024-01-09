@@ -15,9 +15,9 @@ export const Usuarios = (props) => {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                {avatar}
-              }
+              // src={
+              //   {avatar}
+              // }
               name={name}
               title={title}
             />
