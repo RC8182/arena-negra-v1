@@ -1,0 +1,15 @@
+export const datos = {
+    esp: {
+      welcome: {
+        titulo: 'Arena Negra Restaurante - Tu Destino Gastronómico en Los Abrigos',
+        texto: 'Bienvenido a **Arena Negra Restaurante**, su destino culinario en Los Abrigos, Tenerife. Aquí, la paella y los mariscos se encuentran con la belleza de las vistas al mar, creando una experiencia gastronómica inolvidable. Nuestro restaurante se enorgullece de servir la **mejor paella** de la ciudad, preparada con amor y los ingredientes más frescos. Nuestros mariscos son capturados localmente, garantizando un sabor auténtico y fresco que no encontrarás en ningún otro lugar. Ubicado en el corazón de **Los Abrigos**, Arena Negra Restaurante es el lugar perfecto para disfrutar de una comida deliciosa mientras se contempla la belleza de Tenerife. Nuestras vistas al mar son impresionantes, proporcionando el telón de fondo perfecto para una comida relajante. Pero no solo somos conocidos por nuestra comida y nuestras vistas. En Arena Negra Restaurante, creemos que un servicio excelente es tan importante como la comida que servimos. Nuestro personal amable y atento está siempre dispuesto a hacer todo lo posible para asegurar que cada cliente se sienta bienvenido y atendido. Así que si te preguntas **dónde comer pescado en Los Abrigos**, o **dónde comer paella en Los Abrigos**, no busques más. Arena Negra Restaurante es tu respuesta. Te esperamos con los brazos abiertos y las mesas listas para servirte la mejor comida que Tenerife tiene para ofrecer. ¡Esperamos verte pronto en Arena Negra Restaurante, tu restaurante en Los Abrigos! 😊'
+      },
+    },
+    ing: {
+        welcome: {
+        titulo: 'Arena Negra Restaurant - Your Culinary Destination in Los Abrigos',
+        texto: 'Welcome to **Arena Negra Restaurant**, your culinary destination in Los Abrigos, Tenerife. Here, paella and seafood meet the beauty of the sea views, creating an unforgettable gastronomic experience. Our restaurant prides itself on serving the **best paella** in town, prepared with love and the freshest ingredients. Our seafood is locally caught, guaranteeing an authentic and fresh taste that you will not find anywhere else. Located in the heart of **Los Abrigos**, Arena Negra Restaurant is the perfect place to enjoy a delicious meal while contemplating the beauty of Tenerife. Our sea views are stunning, providing the perfect backdrop for a relaxing meal. But we are not only known for our food and our views. At Arena Negra Restaurant, we believe that excellent service is as important as the food we serve. Our friendly and attentive staff is always ready to go the extra mile to ensure that every customer feels welcome and cared for. So if you are wondering **where to eat fish in Los Abrigos**, or **where to eat paella in Los Abrigos**, look no further. Arena Negra Restaurant is your answer. We look forward to welcoming you with open arms and tables ready to serve you the best food that Tenerife has to offer. We look forward to seeing you soon at Arena Negra Restaurant, your restaurant in Los Abrigos! 😊'
+      },
+    }
+  }
+  

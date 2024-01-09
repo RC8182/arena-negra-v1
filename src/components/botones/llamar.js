@@ -1,5 +1,5 @@
 import { ArenaContex } from '@/context/arenaProvider';
-import { Box, Button } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React, { useContext } from 'react'
 
 export const Llamar = (props) => {

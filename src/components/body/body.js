@@ -4,6 +4,7 @@ import Galeria from './galeria/galeria'
 import { Testimonio } from './testimony/testimonio'
 import { Portada } from './portada/portada'
 import { Especialidades } from './especialidades/especialidades'
+import { Welcome } from './vienvenida/welcome'
 export const Body = () => {
 
   return (
@@ -11,6 +12,10 @@ export const Body = () => {
         <Flex >
         <Portada/>
         </Flex> 
+
+        <Flex marginTop={'1%'}>
+          <Welcome/>
+        </Flex>
 
         <Flex marginTop={'1%'}>
           <Especialidades/>

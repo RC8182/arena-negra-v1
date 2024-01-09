@@ -2,8 +2,16 @@
 import React, { createContext, useState, useEffect } from 'react'
 
 export const ArenaContex = createContext();
+export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch('./api/get')
+    const data = await res.json()
+   
+    // Pass data to the page via props
+    return { props: { data } }
+  }
 
-export const ArenaProvider = ({children}) => {
+export const ArenaProvider = ({children, }) => {
 
     const [idioma, setIdioma] = useState('esp');
     const [imgGaleria, setImgGaleria] = useState([]);
@@ -24,6 +32,7 @@ export const ArenaProvider = ({children}) => {
             })
             .catch(error => console.error('Error:', error));
     }, []);
+    
 
     const data = {idioma, setIdioma, imgGaleria, imgPortada, imgEspecialidades }
 

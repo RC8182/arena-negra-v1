@@ -1,11 +1,16 @@
+import img from '../../../../public/images/800/jarra.jpg'
 export const datos=
 {
     esp:{
 
         portada:{
-            h2: 'Bienvenidos a Arena Negra',
-            h1:'Arrocería restaurante en Los Abrigos'
+            h2: 'Arena Negra',
+            h1:'Tu restaurante en Los Abrigos'
         },
+        imagen:{
+            url:img,
+            alt:''
+        }
         
 
     },
@@ -13,10 +18,14 @@ export const datos=
     ing:{
        
         portada:{
-            h2: 'Welcome to Arena Negra',
-            h1:'Arrocería restaurant in Los Abrigos'
+            h2: 'Arena Negra',
+            h1:'Your restaurant in Los Abrigos'
 
         },
+        imagen:{
+            url:img,
+            alt:''
+        }
 
     }
 

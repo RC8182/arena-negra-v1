@@ -12,7 +12,7 @@ export const Portada = () => {
     const datosPortada =( idioma==='esp') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
-    console.log(imgPortada[0]?.url);
+
   return (
     <Box w={'100%'}>
         <Box 
