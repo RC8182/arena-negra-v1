@@ -10,7 +10,7 @@ export const Logo = (props) => {
     width={width}
     alignSelf={'center'}>
     <Image
-        src={require("../../public/images/logoArena.jpg")}
+        src={require("../../public/images/LogoArenaNegra.png")}
         alt="Picture of the author"
         // width="100%" height="100%" layout="responsive" objectFit="contain"
         />
