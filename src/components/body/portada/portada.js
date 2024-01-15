@@ -1,31 +1,16 @@
-'use client'
 import { Box, Flex } from '@chakra-ui/react'
 import { Reservar } from '../../botones/reservas'
 import { Logo } from '../../logo'
 import { datos } from './db'
-import { useEffect, useState } from 'react'
 
 
 export const Portada = ({idioma}) => {
-    const [imgPortada, setImgPortada] = useState([]);
-    useEffect(() => {
-        fetch('./api/get')
-            .then(response => response.json())
-            .then(data => {
-                const img = data.map(item => item);
-                const portadaImages = img.filter(image => image.url.includes('/uploads/portada/'));
-                setImgPortada(portadaImages);
-            })
-            .catch(error => console.error('Error:', error));
-    }, []);
+
     const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
-    const img= datosPortada.portada.img
+    const img= datosPortada.imagen.url
 
-    const backgroundImageStyle = {
-        backgroundImage: imgPortada[0]?.url ? `url(${imgPortada[0]?.url})` : 'none',
-      };
     
 
   return (
@@ -35,8 +20,7 @@ export const Portada = ({idioma}) => {
         minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        // backgroundImage={img.src}
-        backgroundImage={backgroundImageStyle}
+        backgroundImage={img.src}
         backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
@@ -66,7 +50,7 @@ export const Portada = ({idioma}) => {
                     </Flex>
 
                     <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
-                        <Reservar />
+                        <Reservar idioma={idioma} />
                     </Flex>
                     <Flex 
                         margin={'1%'}

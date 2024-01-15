@@ -1,5 +1,4 @@
 import './globals.css'
-import { ArenaProvider } from '@/context/arenaProvider'
 import { Providers } from './providers'
 
 
@@ -30,9 +29,9 @@ export default function RootLayout({ children, params }) {
       <meta name="theme-color" content="black" />
       <body>
         <Providers>
-          <ArenaProvider>
+
             {children}
-          </ArenaProvider>
+
         </Providers>
       </body>
     </html>
