@@ -1,15 +1,12 @@
-'use client'
-import { ArenaContex } from '@/context/arenaProvider'
-import { Box, Heading, Stack, Text } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import { Box, Heading, Stack } from '@chakra-ui/react'
 import { Productos } from './productos'
 import { datos } from './db'
 
 
 
-export const Especialidades = () => {
-    const  {idioma}= useContext(ArenaContex)
-    const datosEspecialidades =( idioma==='esp') ? datos?.esp : datos?.ing;
+export const Especialidades = ({idioma}) => {
+
+    const datosEspecialidades =( idioma==='es') ? datos?.esp : datos?.ing;
     const titulo= datosEspecialidades.especialidades.titulo
     const productos= datosEspecialidades.especialidades.productos;
 

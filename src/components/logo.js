@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
+import logo from '../../public/images/LogoArenaNegra.png';
 
 export const Logo = (props) => {
     const width= props.width
@@ -10,7 +11,7 @@ export const Logo = (props) => {
     width={width}
     alignSelf={'center'}>
     <Image
-        src={require("../../public/images/LogoArenaNegra.png")}
+        src={logo}
         alt="Picture of the author"
         // width="100%" height="100%" layout="responsive" objectFit="contain"
         />

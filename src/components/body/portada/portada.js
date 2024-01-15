@@ -1,17 +1,32 @@
 'use client'
-import React, { useContext } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 import { Reservar } from '../../botones/reservas'
 import { Logo } from '../../logo'
-import { ArenaContex } from '@/context/arenaProvider'
 import { datos } from './db'
+import { useEffect, useState } from 'react'
 
 
-export const Portada = () => {
-    const  {idioma, imgPortada}= useContext(ArenaContex)
-    const datosPortada =( idioma==='esp') ? datos?.esp : datos?.ing;
+export const Portada = ({idioma}) => {
+    const [imgPortada, setImgPortada] = useState([]);
+    useEffect(() => {
+        fetch('./api/get')
+            .then(response => response.json())
+            .then(data => {
+                const img = data.map(item => item);
+                const portadaImages = img.filter(image => image.url.includes('/uploads/portada/'));
+                setImgPortada(portadaImages);
+            })
+            .catch(error => console.error('Error:', error));
+    }, []);
+    const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
+    const img= datosPortada.portada.img
+
+    const backgroundImageStyle = {
+        backgroundImage: imgPortada[0]?.url ? `url(${imgPortada[0]?.url})` : 'none',
+      };
+    
 
   return (
     <Box w={'100%'}>
@@ -20,7 +35,8 @@ export const Portada = () => {
         minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        backgroundImage={`url(${imgPortada[0]?.url})`}
+        // backgroundImage={img.src}
+        backgroundImage={backgroundImageStyle}
         backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}

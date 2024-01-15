@@ -1,5 +1,3 @@
-
-
 import {
   Box,
   Flex,
@@ -7,8 +5,6 @@ import {
   Text,
   Stack,
   Avatar,
-  useColorModeValue,
-
 } from '@chakra-ui/react'
 
 
@@ -25,7 +21,7 @@ export const TestimonialContent = (props) => {
 
   return (
     <Stack
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={'white'}
       boxShadow={'lg'}
       p={8}
       rounded={'xl'}
@@ -41,7 +37,7 @@ export const TestimonialContent = (props) => {
         borderRightWidth: 16,
         borderTop: 'solid',
         borderTopWidth: 16,
-        borderTopColor: useColorModeValue('white', 'gray.800'),
+        borderTopColor: 'white',
         pos: 'absolute',
         bottom: '-16px',
         left: '50%',

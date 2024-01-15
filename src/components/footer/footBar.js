@@ -4,7 +4,7 @@ import { Llamar } from '../botones/llamar';
 import { Idiomas } from '../botones/idiomas';
 import { Direccion } from '../botones/direccion';
 
-export default function FootBar() {
+export default function FootBar({idioma}) {
 
 
   return (
@@ -21,13 +21,13 @@ export default function FootBar() {
 >  
     <Flex flexDir={'row'} px={10} alignItems={'center'} justifyContent={'center'}>
         <HStack display={{ base: 'flex', md: 'none' }} w={'33%'} justifyContent={'flex-start'}>
-        <Llamar phone={+34648416513}/>
+        <Llamar phone={+34648416513} idioma={idioma}/>
         </HStack>
         <HStack display={{ base: 'flex', md: 'none' }} w={'33%'} justifyContent={'center'}>
-        <Direccion />
+        <Direccion idioma={idioma}/>
         </HStack>
         <HStack display={{ base: 'flex', md: 'none' }} w={'33%'} justifyContent={'flex-end'}>
-        <Idiomas/>
+        <Idiomas idioma={idioma}/>
         </HStack>
     </Flex>
 </Box>

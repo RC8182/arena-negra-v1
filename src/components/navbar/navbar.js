@@ -15,7 +15,7 @@ import Link from 'next/link'
 
 
 
-export default function NavBar() {
+export default function NavBar({idioma}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -37,7 +37,7 @@ export default function NavBar() {
               <Box>Arena Negra</Box>
           </Link>
             <HStack display={{ base: 'none', md: 'flex' }}>
-              <NavLink/>
+              <NavLink idioma={idioma}/>
             </HStack>
           </HStack>
 
@@ -45,13 +45,13 @@ export default function NavBar() {
 
           <Flex gap={'60px'}justifyContent={'space-between'}>
                 <HStack display={{ base: 'none', md: 'flex' }} margin={'1%'}>
-                  <Llamar phone={+34677397592}/>
+                  <Llamar phone={+34677397592} idioma={idioma}/>
                 </HStack>
                 <HStack display={{ base: 'none', md: 'flex' }} margin={'1%'}>
-                  <Direccion />
+                  <Direccion idioma={idioma} />
                 </HStack>
                 <HStack display={{ base: 'none', md: 'flex' }} margin={'1%'}>
-                  <Idiomas />
+                  <Idiomas idioma={idioma}/>
                 </HStack>
           </Flex>
           </Flex>

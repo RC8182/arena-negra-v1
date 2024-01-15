@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Box,
   Container,
@@ -9,11 +7,8 @@ import {
   Flex,
   UnorderedList,
   ListItem,
-  useColorModeValue,
 } from '@chakra-ui/react'
-import { useContext } from 'react'
 import { Logo } from '../logo';
-import { ArenaContex } from '@/context/arenaProvider';
 import { datos } from './db';
 
 const ListHeader = ({ children }) => {
@@ -24,10 +19,9 @@ const ListHeader = ({ children }) => {
   )
 }
 
-export default function Footer() {
+export default function Footer({idioma}) {
 
-  const {idioma}= useContext(ArenaContex);
-  const datosFooter =( idioma==='esp') ? datos?.esp : datos?.ing;
+  const datosFooter =( idioma==='es') ? datos?.esp : datos?.ing;
   const contacto= datosFooter.pie.contacto;
   const direccion= datosFooter.pie.direccion;
   const horario= datosFooter.pie.horario;
@@ -99,14 +93,14 @@ export default function Footer() {
           _before={{
             content: '""',
             borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
+            borderColor: 'gray.200',
             flexGrow: 1,
             mr: 8,
           }}
           _after={{
             content: '""',
             borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
+            borderColor: 'gray.200',
             flexGrow: 1,
             ml: 8,
           }}>

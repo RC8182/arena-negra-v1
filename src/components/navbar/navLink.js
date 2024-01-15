@@ -1,13 +1,10 @@
-import { ArenaContex } from "@/context/arenaProvider";
 import { Box, HStack } from "@chakra-ui/react";
 import Link from "next/link";
-import { useContext } from "react";
 import { datos } from "./db";
 
-export const NavLink = () => {
+export const NavLink = ({idioma}) => {
 
-    const {idioma}= useContext(ArenaContex);
-    const Links =( idioma==='esp')
+    const Links =( idioma==='es')
     ? datos?.esp.navbar.links
     : datos?.ing.navbar.links;
     

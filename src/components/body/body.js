@@ -5,28 +5,28 @@ import { Testimonio } from './testimony/testimonio'
 import { Portada } from './portada/portada'
 import { Especialidades } from './especialidades/especialidades'
 import { Welcome } from './vienvenida/welcome'
-export const Body = () => {
+export const Body = ({idioma}) => {
 
   return (
     <Box>    
         <Flex >
-        <Portada/>
+        <Portada idioma={idioma}/>
         </Flex> 
 
         <Flex marginTop={'1%'}>
-          <Welcome/>
+          <Welcome idioma={idioma}/>
         </Flex>
 
         <Flex marginTop={'1%'}>
-          <Especialidades/>
+          <Especialidades idioma={idioma}/>
         </Flex>
 
         <Flex marginTop={'1%'}>
-          <Testimonio/>
+          <Testimonio idioma={idioma}/>
         </Flex>
 
         <Flex marginTop={'1%'}>
-          <About/>
+          <About idioma={idioma}/>
         </Flex>
         <Flex marginTop={'1%'}
         marginBottom={'1%'}>

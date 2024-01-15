@@ -1,16 +1,24 @@
 'use client'
-import { Box, Flex, Heading, } from "@chakra-ui/react";
-import { ArenaContex } from "@/context/arenaProvider";
-import { useContext } from "react";
+import { Box, Flex, Heading, } from "@chakra-ui/react";;
 import { Parallax } from "@/components/parallax/parallax";
 import { datos } from "./db";
+import { useEffect, useState } from "react";
 
 
-export default function Galeria() {
-
-  const {idioma, imgGaleria}= useContext(ArenaContex);
-  const datosGaleria =( idioma==='esp') ? datos?.esp : datos?.ing;
+export default function Galeria({idioma}) {
+  const [imgGaleria, setImgGaleria] = useState([]);
+  const datosGaleria =( idioma==='es') ? datos?.esp : datos?.ing;
   const titulo= datosGaleria.galeria.titulo;
+  useEffect(() => {
+    fetch('./api/get')
+        .then(response => response.json())
+        .then(data => {
+            const img = data.map(item => item);
+            const galeriaImages = img.filter(image => image.url.includes('/uploads/galeria/'));
+            setImgGaleria(galeriaImages);
+        })
+        .catch(error => console.error('Error:', error));
+}, []);
 
   return (
     <Box backgroundColor={'black'} 
