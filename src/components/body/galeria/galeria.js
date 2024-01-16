@@ -1,19 +1,26 @@
+'use client'
 import { Box, Flex, Heading, } from "@chakra-ui/react";
 import { Parallax } from "@/components/parallax/parallax";
 import { datos } from "./db";
-//import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function Galeria({idioma}) {
-  // const [imgGaleria, setImgGaleria] = useState([]);
-  // useEffect(() => {
-  //   const galeriaImages = data.filter(image => image.url.includes('/uploads/galeria/'));
-  //   setImgGaleria(galeriaImages);
-  // }, [data]);
+   const [imgGaleria, setImgGaleria] = useState([]);
+
   const datosGaleria =( idioma==='es') ? datos?.esp : datos?.ing;
   const titulo= datosGaleria.galeria.titulo;
-  const imgGaleria= datosGaleria.galeria.lista_fotos;
 
+  useEffect(() => {
+    const fetchData = async () => {
+        const data = await getData();
+        console.log(data, 'esto es data');
+        setImgGaleria(data);
+    };
+
+    fetchData();
+}, []);
+  console.log(imgGaleria)
   return (
     <Box backgroundColor={'black'} 
     color={'white'} 
@@ -25,12 +32,25 @@ export default function Galeria({idioma}) {
         align={'center'}
         flexWrap={'wrap'}>
         <Heading id="galeria">{titulo}</Heading>        
-         {imgGaleria?.map((e,i)=>{
-          return <Parallax img={e.url.src} alt={e.alt} key={i} /> 
+         {imgGaleria.map((e,i)=>{
+          return <Parallax img={e.url} alt={e.alt} key={i} /> 
          })}
 
       </Flex>
     </Box>
     </Box>
   )
+}
+
+async function getData() {
+  const res = await fetch('http://localhost:3000/api/get');
+  const data = await res.json();
+  const galeriaImages = data.filter(image => image.url.includes('/uploads/galeria/'));
+  
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return galeriaImages
 }
