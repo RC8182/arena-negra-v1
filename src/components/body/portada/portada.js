@@ -10,7 +10,7 @@ export default async function Portada ({idioma}) {
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
     const data = await getData();
-    const img= await data[0].url
+    const img= await data[0]?.url
 
 
   return (
@@ -85,7 +85,7 @@ export default async function Portada ({idioma}) {
 }
 
 export async function getData() {
-    const res = await fetch('http://localhost:3000/api/get');
+    const res = await fetch('http://localhost:3000/api/get', { cache: 'no-store' });
     const data = await res.json();
     const portadaImages = data.filter(image => image.url.includes('/uploads/portada/'));
     

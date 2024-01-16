@@ -33,7 +33,7 @@ export default async function Galeria({idioma}) {
 }
 
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/get');
+  const res = await fetch('http://localhost:3000/api/get', { cache: 'no-store' });
   const data = await res.json();
   const galeriaImages = data.filter(image => image.url.includes('/uploads/galeria/'));
   
