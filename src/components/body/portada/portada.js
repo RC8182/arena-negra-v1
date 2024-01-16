@@ -1,27 +1,17 @@
-'use client'
 import { Box, Flex } from '@chakra-ui/react'
-import { Reservar } from '../../botones/reservas'
-import { Logo } from '../../logo'
+//import { Reservar } from '../../botones/reservas'
+//import { Logo } from '../../logo'
 import { datos } from './db'
-import { useState, useEffect } from 'react';
 
-export const Portada = ({idioma}) => {
+
+export default async function Portada ({idioma}) {
 
     const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
-    
-    const [img, setImg] = useState('');
+    const data = await getData();
+    const img= await data[0].url
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getData();
-            console.log(data, 'esto es data');
-            setImg(data[0]?.url);
-        };
-
-        fetchData();
-    }, []);
 
   return (
     <Box w={'100%'}>
@@ -60,7 +50,7 @@ export const Portada = ({idioma}) => {
                     </Flex>
 
                     <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
-                        <Reservar idioma={idioma} />
+                        {/* <Reservar idioma={idioma} /> */}
                     </Flex>
                     <Flex 
                         margin={'1%'}
@@ -72,7 +62,7 @@ export const Portada = ({idioma}) => {
                         flexDir={'column'}
                         letterSpacing={'10px'}>
                         <h1>{h1}</h1>
-                        <Logo width={'150px'}/>
+                        {/* <Logo width={'150px'}/> */}
                     </Flex>
                    
                 </Flex>
@@ -94,7 +84,7 @@ export const Portada = ({idioma}) => {
   )
 }
 
-async function getData() {
+export async function getData() {
     const res = await fetch('http://localhost:3000/api/get');
     const data = await res.json();
     const portadaImages = data.filter(image => image.url.includes('/uploads/portada/'));
