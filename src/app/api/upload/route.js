@@ -21,7 +21,7 @@ export async function POST(request) {
   // With the file data in the buffer, you can do whatever you want with it.
   // For this, we'll just write it to the filesystem in a new location
   //   const filePath = `/tmp/${file.name}`
-  const filePath = path.join(process.cwd(), `public/uploads/${folder}/`, file.name);
+  const filePath = path.join(process.cwd(), `public/es/uploads/${folder}/`, file.name);
   await writeFile(filePath, buffer);
   // Connect to db
   await testConnection();

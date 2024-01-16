@@ -1,17 +1,27 @@
+'use client'
 import { Box, Flex } from '@chakra-ui/react'
 import { Reservar } from '../../botones/reservas'
 import { Logo } from '../../logo'
 import { datos } from './db'
-
+import { useState, useEffect } from 'react';
 
 export const Portada = ({idioma}) => {
 
     const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
-    const img= datosPortada.imagen.url
-
     
+    const [img, setImg] = useState('');
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getData();
+            console.log(data, 'esto es data');
+            setImg(data[0]?.url);
+        };
+
+        fetchData();
+    }, []);
 
   return (
     <Box w={'100%'}>
@@ -20,7 +30,7 @@ export const Portada = ({idioma}) => {
         minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        backgroundImage={img.src}
+        backgroundImage={`url(${img})`}
         backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
@@ -83,3 +93,16 @@ export const Portada = ({idioma}) => {
     </Box>
   )
 }
+
+async function getData() {
+    const res = await fetch('http://localhost:3000/api/get');
+    const data = await res.json();
+    const portadaImages = data.filter(image => image.url.includes('/uploads/portada/'));
+    
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+   
+    return portadaImages
+  }
