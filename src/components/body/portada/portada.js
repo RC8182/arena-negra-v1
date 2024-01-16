@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react'
-//import { Reservar } from '../../botones/reservas'
-//import { Logo } from '../../logo'
+import { Reservar } from '../../botones/reservas'
+import { Logo } from '../../logo'
 import { datos } from './db'
 
 
@@ -50,7 +50,7 @@ export default async function Portada ({idioma}) {
                     </Flex>
 
                     <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
-                        {/* <Reservar idioma={idioma} /> */}
+                        <Reservar idioma={idioma} />
                     </Flex>
                     <Flex 
                         margin={'1%'}
@@ -62,7 +62,7 @@ export default async function Portada ({idioma}) {
                         flexDir={'column'}
                         letterSpacing={'10px'}>
                         <h1>{h1}</h1>
-                        {/* <Logo width={'150px'}/> */}
+                        <Logo width={'150px'}/>
                     </Flex>
                    
                 </Flex>

@@ -9,8 +9,7 @@ export default async function Galeria({idioma}) {
 
   const datosGaleria =( idioma==='es') ? datos?.esp : datos?.ing;
   const titulo= datosGaleria.galeria.titulo;
-
-        const data = await getData();
+  const data = await getData();
 
   return (
     <Box backgroundColor={'black'} 
