@@ -19,7 +19,7 @@ export async function DELETE(request) {
       await connection.query("DELETE FROM photos WHERE id = ?", [id]);
 
       // Elimina el archivo de la foto del sistema de archivos
-      const filePath = path.join(process.cwd(), 'public', 'es', url_image);
+      const filePath = path.join(process.cwd(), 'public', url_image);
       await unlink(filePath);
 
       // Devuelve una respuesta exitosa

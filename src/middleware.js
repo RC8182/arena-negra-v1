@@ -28,21 +28,15 @@ function getLocale(request) {
 export function middleware(request) {
   const pathname = request.nextUrl.pathname
 
-  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
-  // if (
-  //   [
-  //     '/manifest.json',
-  //     '/favicon.ico',
-  //     // Your other files in `public`
-  //   ].includes(pathname)
-  // )
-  //   return
 
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )
+    // Excepciones para rutas específicas
+    if (pathname.startsWith('/public') || pathname === '/robots.txt' || pathname === '/sitemap.xml' || pathname === '/uploads') {
+      return;
+    }
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
@@ -61,5 +55,5 @@ export function middleware(request) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|uploads|manifest.json).*)'],
 }
