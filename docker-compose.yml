@@ -31,6 +31,6 @@ services:
       - DB_NAME=$MYSQL_DATABASE
       - DB_PORT=$MYSQL_DOCKER_PORT
     volumes:  
-      - ./public/es/uploads/especialidades:/app/public/es/uploads/especialidades
-      - ./public/es/uploads/galeria:/app/public/es/uploads/galeria
-      - ./public/es/uploads/portada:/app/public/es/uploads/portada
+      - ./public/uploads/especialidades:/app/public/uploads/especialidades
+      - ./public/uploads/galeria:/app/public/uploads/galeria
+      - ./public/uploads/portada:/app/public/uploads/portada

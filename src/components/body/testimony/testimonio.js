@@ -36,37 +36,53 @@ export const Testimonio = ({idioma}) => {
                             })
                             }
                   </Stack>
-                  <Flex flexDir={{base:'column', lg:'row'}}
-                  justifyContent={'center'}
-                  gap={'5%'}>
-                      <Flex className='boton-escribe'
+                  <Flex
+                      flexDir={{ base: 'column', lg: 'row' }}
                       justifyContent={'center'}
-                     >
-                     {(idioma === 'esp')?
-                      <Button border={'1px black solid'}>
-                          <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,3,,,,'} isExternal>Escribe un comentario</Link>
-                      </Button> :
-                      <Button>
-                          <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,3,,,,'} isExternal>Write a comment</Link></Button>
-                     }
-          
-                      </Flex>
-                      <Flex className='boton-ver-mas'
-                      justifyContent={'center'}>
-                      {(idioma === 'esp')?
-                        <Button border={'1px black solid'}>
+                      alignItems={'center'}  // Agregado para centrar verticalmente
+                      gap={{ base: '5%', lg: '5%' }}
+                      w="full"              // Agregado para ocupar todo el ancho
+                    >
+                    <Box
+                      mb={{ base: '5%', lg: 0 }}
+                      mr={{ base: 0, lg: '5%' }}
+                    >
+                      {(idioma === 'es') ?
+                        <button
+                          className="rounded-lg p-2 bg-black text-white border-white border outline-none ">
+                          <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,3,,,,'} isExternal>
+                            Escribe un comentario
+                          </Link>
+                        </button> :
+                        <button
+                          className="rounded-lg p-2 bg-black text-white border-white border outline-none transition-opacity duration-200"
+                          >
+                          <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,3,,,,'} isExternal>
+                            Write a comment
+                          </Link>
+                        </button>
+                      }
+                      </Box>
+                      <Box
+                        mb={{ base: '5%', lg: 0 }}
+                        mr={{ base: 0, lg: '5%' }}
+                      >
+                      {(idioma === 'es')?
+                        <button
+                        className="rounded-lg p-2 bg-black text-white border-white border outline-none ">
                           <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,1,,,,'} isExternal>
                               Todos los comentarios
                           </Link>
-                        </Button> :
-                        <Button>
+                        </button> :
+                        <button
+                        className="rounded-lg p-2 bg-black text-white border-white border outline-none ">
                           <Link href={'https://www.google.com/search?q=arena+negra+los+abrigos&oq=arena+negra+los+abrigos&aqs=chrome.0.0i355i512j46i175i199i512j0i512l2j69i61j69i60.8087j0j7&sourceid=chrome&ie=UTF-8#lrd=0xc6a9ff939f59e7d:0x45d033e243f2aad0,1,,,,'} isExternal>
                               All Comments
                           </Link>
-                          </Button>
+                          </button>
                       }
           
-                      </Flex>
+                      </Box>
                   </Flex>
                 </Box>
               </Box>

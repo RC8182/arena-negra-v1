@@ -1,3 +1,4 @@
+import ScrollToTopButton from '@/components/scrollUp';
 import './globals.css'
 import { Providers } from './providers'
 
@@ -31,7 +32,7 @@ export default function RootLayout({ children, params }) {
         <Providers>
 
             {children}
-
+        <ScrollToTopButton/>
         </Providers>
       </body>
     </html>
