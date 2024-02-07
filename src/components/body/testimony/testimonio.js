@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Link, Stack, Text} from '@chakra-ui/react'
+import { Box, Flex, Heading, Link, Stack, Text} from '@chakra-ui/react'
 import { Usuarios } from './usuarios'
 import { datos } from './db'
 
