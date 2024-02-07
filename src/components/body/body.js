@@ -30,7 +30,7 @@ export const Body = ({idioma}) => {
         </Flex>
         <Flex marginTop={'1%'}
         marginBottom={'1%'}>
-          <Galeria/>
+          <Galeria idioma={idioma}/>
         </Flex>
 
     </Box>

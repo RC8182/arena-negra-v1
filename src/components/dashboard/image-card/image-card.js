@@ -57,14 +57,14 @@ return (
       {filteredImages.map((image, index) => (
         <div key={index} className="m-5 flex flex-col items-center">
           <h1 className="text-4xl text-center my-4">{image.title_file}</h1>
-          <Image
+          {/* <Image
             src={image.url}
             alt={image.title_file}
             className="w-64 h-64 object-contain mx-auto"
             width={256}
             height={256}
             priority={true}
-          />
+          /> */}
           {(type === 'especialidades')
           ?<div>{image.comment}</div>
           :null}

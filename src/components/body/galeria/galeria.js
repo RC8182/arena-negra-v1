@@ -4,10 +4,10 @@ import { datos } from "./db";
 
 
 
+
 export default async function Galeria({idioma}) {
 
-
-  const datosGaleria =( idioma==='es') ? datos?.esp : datos?.ing;
+  const datosGaleria =( idioma=='es') ? datos.esp : datos.ing;
   const titulo= datosGaleria.galeria.titulo;
   const data = await getData();
 
@@ -21,7 +21,7 @@ export default async function Galeria({idioma}) {
       <Flex flexDir={'column'} 
         align={'center'}
         flexWrap={'wrap'}>
-        <Heading id="galeria">{titulo}</Heading>        
+        <Heading >{titulo}</Heading>        
          {data.map((e,i)=>{
           return <Parallax img={e.url} alt={e.alt} key={i} /> 
          })}

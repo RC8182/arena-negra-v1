@@ -1,8 +1,7 @@
 version: '3.8'
 services:
   arena-db:
-    image: arena-mysql
-    build: ./db
+    image: mysql:latest
     volumes:
       - ./db/initial:/docker-entrypoint-initdb.d
       - ./db/data:/var/lib/mysql

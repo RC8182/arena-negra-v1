@@ -58,8 +58,13 @@ export default async function Portada({ idioma }) {
               letterSpacing={'10px'}
             >
               <h2>{h2}</h2>
-              <br />
+              <Flex  
+              fontSize={'18px'}
+              justifyContent={'center'}
+              padding={'18px'}
+             >
               <h2>{sub}</h2>
+              </Flex>
             </Flex>
 
             <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
