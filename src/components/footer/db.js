@@ -10,7 +10,7 @@ export const datos=
             direccion:{
                 titulo:'Dirección',
                 dir:'Paseo Marítimo',
-                dir1:'Local 32',
+                dir1:'Locales 28, 32, 34',
                 dir2: '38618 Los Abrigos',
                 dir3: 'Santa Cruz de Tenerife'
             },
@@ -43,7 +43,7 @@ export const datos=
             direccion:{
                 titulo:'Address',
                 dir:'Paseo Marítimo',
-                dir1:'Local 32',
+                dir1:'Locals 28, 32, 34',
                 dir2: '38618 Los Abrigos',
                 dir3: 'Santa Cruz de Tenerife'
             },

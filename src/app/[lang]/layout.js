@@ -23,9 +23,9 @@ export default function RootLayout({ children, params }) {
 
   return (
     <html lang={currentLang}>
-      <title>{currentMetadata.title}</title>
-      <meta name="description" content={currentMetadata.description} />
-      <meta name="keywords" content={currentMetadata.keywords} />
+      <title>{currentMetadata?.title}</title>
+      <meta name="description" content={currentMetadata?.description} />
+      <meta name="keywords" content={currentMetadata?.keywords} />
       <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
       <meta name="theme-color" content="black" />
       <body>
